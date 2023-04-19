@@ -1,4 +1,4 @@
-function drawDDALine() {
+function DDALine() {
   let vertexData = [];
   let X0 = 200;
   let Y0 = 200;

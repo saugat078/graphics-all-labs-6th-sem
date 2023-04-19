@@ -1,4 +1,4 @@
-
+//get the canvas element
 const canvas = document.querySelector("#canvas");
 const canvasHeight = canvas.height;
 const canvasWidth = canvas.width;
@@ -9,7 +9,7 @@ function normalise(pos, axis) {
   return normalised;
 }
 
-
+//initialize webgl
 var gl;
 var vertexBuffer;
 var vertCode;
@@ -22,7 +22,7 @@ function GLINIT() {
     );
   }
 
-
+//initialize the vertex buffer and vertex shader
   vertexBuffer = gl.createBuffer();
   gl.bindBuffer(gl.ARRAY_BUFFER, null);
   vertCode =
@@ -37,7 +37,7 @@ function GLINIT() {
   gl.compileShader(vertShader);
 }
 
-
+//function to draw object using fragmentshader,compileshader,attachshader
 function DrawObject(object, objectSize, fragCode, vertices, start, end) {
   var fragShader = gl.createShader(gl.FRAGMENT_SHADER);
   gl.shaderSource(fragShader, fragCode);

@@ -1,4 +1,4 @@
-function drawBLALine() {
+function BLALine() {
   let vertexData = [];
   let X0 = 200;
   let Y0 = 200;

@@ -18,12 +18,12 @@ let scriptList = [
   function callAlgo(title) {
     if (title === "DDA") {
       GLINIT();
-      drawDDALine();
+      DDALine();
       return;
     }
     if (title === "BLA") {
       GLINIT();
-      drawBLALine();
+      BLALine();
       return;
     }
     if (title === "reset") {
