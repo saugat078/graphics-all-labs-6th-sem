@@ -50,8 +50,7 @@ z=normalizeCoordinates(line_vertices,0,130)
 console.log(z)
 prev_line=new Float32Array(z)
 console.log(prev_line)
-createline(prev_line)
-
+// s
 
 // Define the clipping region boundaries
 var xmin = -0.4;
