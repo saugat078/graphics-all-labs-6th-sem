@@ -15,12 +15,12 @@ var rectangleVertices = [
 ];
 createwindow(rectangleVertices)
 var polygonVertices = [
-  [-0.6, -0.7],
-  [0.9, 0.6],
-  [0.45, 0.6],
-  [-0.4, 0.2]
+  [0.6, -0.6],
+  [0.2, 0.4],
+  [-0.2, 0.5],
+  [-0.4, 0.3]
 ];
-// createwindow(polygonVertices)
+createwindow(polygonVertices)
 function clip(subjectPolygon, clipPolygon) {
   var cp1, cp2, s, e;
   var inside = function(p) {
@@ -60,7 +60,7 @@ function clip(subjectPolygon, clipPolygon) {
 
 var z = clip(polygonVertices, rectangleVertices);
 console.log(z);
-createwindow(z)
+// createwindow(z)
 
 
 

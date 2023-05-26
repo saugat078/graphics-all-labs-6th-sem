@@ -1,37 +1,46 @@
 
+function getRandomColor() {
+  return [
+    Math.random(), // Random red component (0.0 - 1.0)
+    Math.random(), // Random green component (0.0 - 1.0)
+    Math.random(), // Random blue component (0.0 - 1.0)
+    1.0 // Alpha value (1.0 for solid color)
+  ];
+}
+
 const pinkFragCode = `
   void main(void) {
-    gl_FragColor = vec4(1.0, 0.0, 1.0, 1.0); // Solid pink color
+    gl_FragColor = vec4(${getRandomColor().join(', ')}); // Random color
   }
 `;
 
 const redFragCode = `
   void main(void) {
-    gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0); // Solid red color
+    gl_FragColor = vec4(${getRandomColor().join(', ')}); // Random color
   }
 `;
 
 const greenFragCode = `
   void main(void) {
-    gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0); // Solid green color
+    gl_FragColor = vec4(${getRandomColor().join(', ')}); // Random color
   }
 `;
 
 const blueFragCode = `
   void main(void) {
-    gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0); // Solid blue color
+    gl_FragColor = vec4(${getRandomColor().join(', ')}); // Random color
   }
 `;
 
 const yellowFragCode = `
   void main(void) {
-    gl_FragColor = vec4(1.0, 1.0, 0.0, 1.0); // Solid yellow color
+    gl_FragColor = vec4(${getRandomColor().join(', ')}); // Random color
   }
 `;
 
 const whiteFragCode = `
   void main(void) {
-    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0); // Solid white color
+    gl_FragColor = vec4(${getRandomColor().join(', ')}); // Random color
   }
 `;
 
@@ -143,7 +152,7 @@ function drawCube(vertices, angleX, angleY, angleZ) {
 const angleX = Math.PI / 4; // 45 degrees in radians for X-axis rotation
 const angleY = Math.PI / 4; // 45 degrees in radians for Y-axis rotation
 const angleZ = Math.PI / 4; // 45 degrees in radians for Z-axis rotation
-drawCube(initialCubeVertices, angleX,angleY,angleZ);
+// drawCube(initialCubeVertices, angleX,angleY,angleZ);
 
 function translate(vertices, tx, ty, tz) {
   const translatedVertices = new Float32Array(vertices.length);
@@ -194,11 +203,11 @@ function drawCube(vertices, angleX, angleY, angleZ) {
 
 
 var tx = 0.2;
-var ty = 0.1;
+var ty = 0.2;
 var tz = 0.2;
-var sx = 0.2;
-var sy = 0.2;
-var sz = 0.2;
+var sx = 0.3;
+var sy = 0.3;
+var sz = 0.3;
 const translation = new Float32Array([tx, ty, tz]); // Translation values for X, Y, and Z axes
 const scaleValues = new Float32Array([sx, sy, sz]); // Scale values for X, Y, and Z axes
 
@@ -207,4 +216,4 @@ const scaleValues = new Float32Array([sx, sy, sz]); // Scale values for X, Y, an
 // drawCube(initialCubeVertices, angleX, angleY, 0,0,0);
 // drawCube(initialCubeVertices, angleX, angleY, angleZ, 0, 0);
 // drawCube(initialCubeVertices, angleX, angleY, angleZ, translation, 0);
-// drawCube(initialCubeVertices, angleX, angleY, angleZ, translation, scaleValues);
+drawCube(initialCubeVertices, angleX, angleY, angleZ, translation, scaleValues);

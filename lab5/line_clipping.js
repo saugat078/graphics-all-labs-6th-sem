@@ -17,15 +17,15 @@ var rectangle_vertices = new Float32Array([
 //creates window 
 createwindow(rectangle_vertices,fragcode=`
 void main(void) {
-  gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+  gl_FragColor = vec4(1.0, 1.0, 0.0, 1.0);
 }
 `)
 
 //initial line
-var lineStartX = 0;
+var lineStartX = 50;
 var lineStartY = 120;
-var lineEndX = 130;
-var lineEndY = 5;
+var lineEndX = 110;
+var lineEndY = 25;
 
 var line_vertices = new Float32Array([
     lineStartX, lineStartY,
@@ -50,7 +50,7 @@ z=normalizeCoordinates(line_vertices,0,130)
 console.log(z)
 prev_line=new Float32Array(z)
 console.log(prev_line)
-// s
+// createline(prev_line)
 
 // Define the clipping region boundaries
 var xmin = -0.4;
@@ -119,7 +119,11 @@ function cohenSutherlandLineClipping(z)
             x2, y2
         ]);
         console.log(x1,y1,x2,y2)
-        createline(vertices)
+        createline(vertices,fragcode=`
+        void main(void) {
+          gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+        }
+        `)
     }
 }
 
